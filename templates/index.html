@@ -1,4 +1,4 @@
-,<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,52 +6,24 @@
     <title>bichu Website</title>
     
     <!-- bootstrap dependencies -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- bootstrap 4.0 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
-
-    <!-- update the version number as needed -->
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-       <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-functions.js"></script> -->
-    <!-- <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyDeqCBSZU99DQ2y1EDOHik7cK4nJSV5zaU",
-        authDomain: "fire-bichu136.firebaseapp.com",
-        databaseURL: "https://fire-bichu136.firebaseio.com",
-        projectId: "fire-bichu136",
-        storageBucket: "fire-bichu136.appspot.com",
-        messagingSenderId: "721970488521",
-        appId: "1:721970488521:web:baac917ccf9f6410921918",
-        measurementId: "G-V3ZZRP6960"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      // firebase.analytics();
-    </script> -->
-    <!-- include only the Firebase features as you need -->
-    <!-- initialize the SDK after all desired features are loaded -->
-    <!-- <script defer src="../node_modules//firebase/init.js"></script> -->
-    
-    <!-- bootstrap link -->
-    <link rel="stylesheet" href="./css/style.css">
-
-    
   </head>
+
+
   <body>
+
+
+    <link rel="stylesheet" src="{{url_for('static',filename='style.css')}}"></link>
+
+    
     <div>
-      <img id="logo" src="{{ url_for('static', filename = 'logo.jpg') }}" style="width:50px;height: 50px;"></img>
+      <img id="logo" src="{{ url_for('static', filename = 'logo.jpg') }}" ></img>
     </div>
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

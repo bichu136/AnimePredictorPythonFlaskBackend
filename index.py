@@ -11,7 +11,6 @@ from sklearn.metrics import mean_absolute_error
 import tensorflow as tf
 
 app = flk.Flask(__name__)
-
 interpreter = tf.lite.Interpreter(model_path="model.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
@@ -354,9 +353,9 @@ source = ['4-koma manga', 'Book', 'Card game',
 @app.route("/")
 def index():
     return flk.render_template("index.html",genre_list=genres,studio_list = studio, source_list = source)
-@app.route("/api/",methods=["POST"])
+@app.route("/api",methods=["POST"])
 def testJSONPOST():
-    
+    return flk.jsonify(value=1)
 
 if __name__ == '__main__':
     app.run(debug=True)
