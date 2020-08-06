@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>bichu Website</title>
-    
+    <script>
+      var baseUrl="{{ request.url_root }}"
+    </script>
     <!-- bootstrap dependencies -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -13,34 +15,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    
   </head>
 
 
   <body>
-
-
-    <link rel="stylesheet" src="{{url_for('static',filename='style.css')}}"></link>
-
-    
     <div>
-      <img id="logo" src="{{ url_for('static', filename = 'logo.jpg') }}" ></img>
+      <img id="logo" src="/static/logo.jpg" ></img>
     </div>
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">bichuSite</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="/">Nothing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="/AnimePredictor">AnimePredictor</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
@@ -50,52 +50,10 @@
     </nav>
     <!-- all sellector -->
     <!-- div below is dinamic div, depend on what site we're in, it will create that site-->
-    <div>
-      <div id="container" class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">
-            anime name
-          </span>
-          <input type="text" class="input-group-text" placeholder="place name here" aria-label="Username" aria-describedby="basic-addon1" id="AnimeName">
-        </div>
-      </div>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#genre_collection" aria-expanded="false" aria-controls="genre_collection">
-        Genre
-      </button>
-      <div class="collapse show" id="genre_collection"> 
-        <div class="container">
-          {% for value in genre_list%}
-          <div class="column-sm-1"><input type="checkbox">{{value}}</div>
-        {%endfor%}
-        </div>
-        
-      </div>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#genre_collection" aria-expanded="false" aria-controls="genre_collection">
-        Source
-      </button>
-      <div class="collapse show" id="genre_collection"> 
-        <div class="container">
-          {% for value in source_list%}
-          <div class="row-sm-4"><input type="radio">{{value}}</div>
-        {%endfor%}
-        </div>
-        
-      </div>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#genre_collection" aria-expanded="false" aria-controls="genre_collection">
-        Studio
-      </button>
-      <div class="collapse show" id="genre_collection"> 
-        <div class="container">
-          {% for value in studio_list%}
-          <div class="column-sm-1"><input type="radio">{{value}}</div>
-        {%endfor%}
-        </div>
-        
-      </div>
-      <button class ="btn btn-dark" id="Done">
-        Done
-      </button>
-    </div>
+    {%block content%}
+
+    {% endblock %}
+    
         <!-- <script src="./script/main.js"></script> -->
     
    
